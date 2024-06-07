@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
 
-const InputField : React.FC = () => {
-    const [task, setTask] = useState<string>('');
+interface InputProps {
+  todo : string, 
+  setTodo: React.Dispatch<React.SetStateAction<string>>;
+  handleAddTask : (e: React.FormEvent) => void;
+}
 
-    const handleOnSubmit = (e : React.FormEvent<HTMLFormElement>) : void => {
-        e.preventDefault();
-        console.log(task);
-        setTask('');
-    }
+const InputField : React.FC<InputProps> = ({todo, setTodo, handleAddTask}) => {
+
   return (
-    <form className='input' onSubmit={handleOnSubmit}>
+    <form className='input' onSubmit={handleAddTask}>
         <input 
             type="input" 
             placeholder='Enter a task'
             className='input_field'
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
+            value={todo}
+            onChange={(e) => setTodo(e.target.value)}
         />
         <button className='input_Submit' type='submit'> Go </button>
     </form>
