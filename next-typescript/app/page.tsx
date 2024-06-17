@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
       <h1>Hello Next</h1>
-      <button>Click for the data</button>
+      <Link href="/users"> Click to Navigate</Link>
     </main>
   );
 }
