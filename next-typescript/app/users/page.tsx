@@ -1,13 +1,23 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React, { DetailedHTMLProps } from 'react'
 
-const UsersPage = () => {
+interface DataType{
+  id : number;
+  userId : number;
+  title : string;
+  body : string;
+}
+const UsersPage = async() => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const data : DataType[] = await res.json();
   return (
-    <main>
-      <div> Text </div>
-      <Link href="/users/subPage"> Go to Sub</Link> <br/>
-      <Link href="/"> Back to Home</Link>
-    </main>
+    <>
+    <h1>Users : </h1>
+    <Link href="/">{"Back to home ->"}</Link>
+    <ul>
+      {data.map(user => <li key={user.id}>{user.title}</li>)}
+    </ul>
+    </>
   )
 }
 
