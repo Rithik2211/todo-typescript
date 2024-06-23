@@ -11,6 +11,7 @@ export default function Home() {
       <div className={styles.card}>
         <h1>New component</h1>
       </div>
+      <button className='bg-sky-400 hover:bg-sky-500 '>Click Here</button>
     </main>
   );
 }
