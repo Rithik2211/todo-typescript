@@ -13,7 +13,8 @@ const UsersPage = async() => {
   return (
     <>
     <h1>Users : </h1>
-    <Link href="/">{"Back to home ->"}</Link>
+    <Link href="/">{"Back to home ->"}</Link><br />
+    <Link href="/users/newPage?data:hello">{"New Page"}</Link>
     <ul>
       {data.map(user => <li key={user.id}>{user.title}</li>)}
     </ul>
