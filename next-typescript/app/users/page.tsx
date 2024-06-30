@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { DetailedHTMLProps } from 'react'
+import React from 'react'
 
 interface DataType{
   id : number;
