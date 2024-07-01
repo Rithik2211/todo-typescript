@@ -6,7 +6,7 @@ const  Text  = () => {
   console.log(data)
   return (
     <main>
-      <div> Text </div>
+      <div> Sub componemt for  the  code</div>
       <Link href="/"> Back to Home</Link>
     </main>
   )
