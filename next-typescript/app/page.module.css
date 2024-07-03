@@ -1,3 +1,6 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
 .card{
     padding: 1rem;
     border: 1px solid #dc2f52;
