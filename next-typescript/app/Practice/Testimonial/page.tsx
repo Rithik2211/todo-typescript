@@ -18,7 +18,7 @@ const Testimonial = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true
         }
@@ -27,7 +27,7 @@ const Testimonial = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2
         }
       },
@@ -45,8 +45,8 @@ const Testimonial = () => {
         <h1 className='text-4xl'>Testimonials</h1>
         <Link href={'/'}> Click to Exit</Link>
         <Slider {...settings}>
-          {cardData?.map((data, index) => (
-            <div key={index}>
+          {cardData?.map((data) => (
+            <div key={data?.id}>
               <Image src={data?.image} alt={data?.title} width={300} height={300} />
               <h1>{data?.title}</h1>
             </div>
